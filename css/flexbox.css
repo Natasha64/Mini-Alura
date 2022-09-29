@@ -1,0 +1,178 @@
+/*PRIMER ELEMENTO ACA TRABAJAMOS LOGO Y MENU*/
+.headerPrincipal .container {
+    display: flex;
+    /*Alineados uno al lado del otro ahora queremos en horizontal*/
+    align-items: center;
+    /*que los elementos queden en el medio*/
+    justify-content: space-between;
+    /*espacio entre elementos*/
+}
+
+/*SEGUNDO ELEMENTO ESTA ES UNA CLASE PADRE PARA LOS ELEMENTOS INTERNOS*/
+.headerPrincipal-nav {
+    display: flex;
+    /*Hizo que los elementos quedaran uno al lado del otro en horizontal*/
+
+}
+
+/*Arreglando el footer etiqueta padre */
+.rodapePrincipal-patrocinadores .container {
+    display: flex;
+    /*Recordar que quedan alineados uno al lado del otro ahora queremos en horizontal */
+    justify-content: space-between;
+    /*Espacio entre elementos*/
+}
+
+/*Nuestro padre aca seria el ul*/
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    align-items: center;
+    /*quedan los 3 logos alineados verticalmente*/
+    justify-content: space-around;
+    /*teniamos puesto  space-between pero para meternos dentro del elemento y que queden mas al medio pusimos esto space around que es espacio dentro de lpos elementos*/
+    width: 70%;
+    /*Para que me tome el espacio entre logos tuvimos que poner un ancho de75% y cambiarlo a 70 para que me de 5% de margen derecho*/
+    margin-right: 5%;
+}
+
+/*Nuestro padre form donde dice entre en contacto*/
+.rodapePrincipal-contatoForm {
+    width: 25%;
+    /*25% restante de los 100 que representa al footer completo */
+
+}
+
+/*Para que el boton de enviar quede al lado de la caja form y no abajo*/
+.rodapePrincipal-contatoForm-fieldset {
+    display: flex;
+}
+
+/*Mapa de crusos elemento padre*/
+.rodapePrincipal-navMap-list {
+    display: flex;
+    flex-direction: column;
+    /*coloca uno abajo de otro*/
+    height: 250px;
+    /*esto para que me limite las columnas en un tamaño especifico*/
+    /*tenemos que probar con un altura para que quede uno al lado del otro*/
+    flex-wrap: wrap;
+    /*esto indica que cuando llegue a250px quiebre a la siguiente columna por cada 250px empieza a rellenar las columnas*/
+}
+
+/*NUESTROS CURSOS etiqueta padre contenidoPrincipal-cursos tenemos que poner display flex tambien para que no queden todas las imagenes juntas*/
+.contenidoPrincipal-cursos {
+    display: flex;
+    flex-wrap: wrap;
+    /*para que quiebre recordar*/
+}
+
+/*li tenemos un container de 100% y queremos dividirlo 4 5 elementos*/
+.contenidoPrincipal-cursos-link {
+    display: flex;
+    width: 23%;
+    /*esto se coloca dentro de 100% de todas maneras quedan todos agrupados pusimos el flex-wrap en el elemento padre*/
+}
+
+/*por que un espacio de 23% tengo un espacio de 100% y quiero colocar 
+4 o 5 elementos si son 5 elementos seria un 20% para dejarle un pequeño margen
+le pusimos 23 y no25*/
+
+.videoSobre .container {
+    display: flex;
+
+
+}
+
+/*sobre parrafos del video*/
+.videoSobre-sobre {
+   text-align: center;
+   display: flex;
+   flex-direction: column;
+}
+
+
+.videoSobre-video{
+    flex-grow: 2;/*flex-grow va a tomar todo el espacio que esta sobrando y lo va a dividir
+    en la cantidad de secciones que yo le indique */
+ 
+}
+
+/*Creando espacio entre boton y texto*/
+.videoSobre-sobre-list{
+    
+    flex-grow: 2;/*Crea espacio entre boton y texto*/
+    flex-shrink: 2;/*que quiere decir esto en forma que vaya disminuyendo la pantalla
+   el le va a colocar 2 veces menor el tamaño del video*/
+}
+
+
+/*Responsive*/
+
+@media(max-width:768px) {
+
+    .headerPrincipal .container {
+        flex-direction: column;
+        align-items: initial;
+        text-align: center;
+    }
+
+    .headerPrincipal-nav {
+        flex-direction: column;
+
+    }
+
+    /*Elemento padre*/
+    .contenidoPrincipal-cursos {
+        flex-direction: column;
+        /*img una debajo de la otra*/
+    }
+
+
+    .contenidoPrincipal-cursos-link {
+        width: 100%;
+        /*Para que las imagenes se vean completas*/
+    }
+
+    .videoSobre .container {
+        flex-direction: column;
+    }
+
+
+    /*Mapa de cursos*/
+    .rodapePrincipal-navMap-list {
+        height: auto;
+        /*le sacamos la altura de 250px que habiamos puesto y lo dejamos en auto*/
+        flex-wrap: nowrap;
+    }
+
+    /*footer*/
+    .rodapePrincipal-patrocinadores .container {
+        flex-direction: column;
+    }
+
+    /*form*/
+    .rodapePrincipal-contatoForm {
+        width: 100%;
+    }
+
+    /*ul parte logos*/
+    .rodapePrincipal-patrocinadores-list {
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        /*con esto le quitamos el margin que le habiamos puesto a la derecha*/
+
+    }
+
+    /*input y boton*/
+    .rodapePrincipal-contatoForm-fieldset {
+        justify-content: center;
+    }
+    .headerPrincipal-nav-link-app{
+        order:-1;/*el ultimo items del nav se pone primero que seria NUESTRA APP*/
+      }
+
+      .videoSobre .container{
+        flex-direction: column;
+      }
+}
